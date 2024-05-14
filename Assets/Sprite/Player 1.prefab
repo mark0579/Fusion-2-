@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 4322584095078659465}
   - component: {fileID: 3038552742126768613}
   - component: {fileID: 7303659677174360088}
-  - component: {fileID: 6401692217260002721}
   - component: {fileID: 5779405800256512578}
   - component: {fileID: 766359738573958063}
   - component: {fileID: 5254472879604299871}
-  - component: {fileID: -8623803992956325027}
+  - component: {fileID: -7691845112789996923}
+  - component: {fileID: 1773934093634510183}
+  - component: {fileID: -6260657360829984419}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -110,33 +111,6 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 5779405800256512578}
   - {fileID: 766359738573958063}
-  - {fileID: -8623803992956325027}
---- !u!143 &6401692217260002721
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4580701878883022344}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5779405800256512578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +161,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-8623803992956325027
+--- !u!143 &-7691845112789996923
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580701878883022344}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.1111112
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1773934093634510183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,15 +196,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 4580701878883022344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 506319458, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f0b67fbc2acaf64581502c6ea129feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animator: {fileID: 5254472879604299871}
-  TotalWords: 2
-  ApplyTiming: 2
-  SyncSettings: 79
-  StateHashes: 0000000020e23b685928a8ceb23778a5307834201ae6174d48bc6864
-  TriggerHashes: 00000000
+  scanRange: 10
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  nearestTarget: {fileID: 0}
+--- !u!114 &-6260657360829984419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580701878883022344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e27b0cf0d3e9b44918147c6e15d676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1344469604098235282, guid: 09bd6c90493d12145b7a5b3fc2c06764, type: 3}
+  projectilePrefab: {fileID: 5470487627850151967, guid: b2deb57f035c19e40a1e4c461668d3cd, type: 3}
+  attackInterval: 2
 --- !u!1001 &7694043576709765015
 PrefabInstance:
   m_ObjectHideFlags: 0

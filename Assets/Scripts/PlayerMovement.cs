@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : NetworkBehaviour
 {
     private CharacterController _controller;
+    //private Rigidbody2D _controller;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
 
@@ -21,7 +22,6 @@ public class PlayerMovement : NetworkBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
     }
-
     public override void FixedUpdateNetwork()
     {
         // 자신의 플레이어만 제어
@@ -53,6 +53,7 @@ public class PlayerMovement : NetworkBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             IsDead = !IsDead;
+            //Debug.Log($"IsDead toggled to {IsDead}");
         }
 
         // 상하 이동만 있을 때는 스프라이트 반전 유지
@@ -70,9 +71,9 @@ public class PlayerMovement : NetworkBehaviour
 
     public override void Render()
     {
-        // 네트워크로 동기화된 파라미터를 Animator에 반영
         _animator.SetFloat("Speed", Speed);
         _animator.SetBool("Dead", IsDead);
+        Debug.Log($"Animator Dead set to {IsDead}");
         UpdateFlip();
     }
 }
