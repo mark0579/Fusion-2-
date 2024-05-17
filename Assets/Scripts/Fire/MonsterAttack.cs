@@ -1,6 +1,7 @@
 using UnityEngine;
+using Fusion;
 
-public class MonsterAttack : MonoBehaviour
+public class MonsterAttack : NetworkBehaviour
 {
     public Transform target; // 타겟의 위치
     public GameObject projectilePrefab; // 발사될 프로젝타일의 프리팹

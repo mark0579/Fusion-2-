@@ -1,15 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
-public class Bullet : MonoBehaviour
+public class Bullet : NetworkBehaviour
 {
-    public float damage;
-    public int per;
+    public float damage = 10f;
 
-    public void Init(float damage, int per)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        this.damage = damage;
-        this.per = per;
+        if (other.CompareTag("Monster"))
+        {
+            Monster monster = other.GetComponent<Monster>();
+            if (monster != null)
+            {
+                monster.TakeDamage(damage);
+                Runner.Despawn(Object);
+            }
+        }
     }
 }

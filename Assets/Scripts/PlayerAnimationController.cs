@@ -1,4 +1,5 @@
-using UnityEngine;
+/*
+ * using UnityEngine;
 using Fusion;
 
 public class PlayerAnimationController : NetworkBehaviour
@@ -42,3 +43,4 @@ public class PlayerAnimationController : NetworkBehaviour
         _animator.SetBool("Dead", IsDead);
     }
 }
+*/
